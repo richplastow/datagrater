@@ -1,0 +1,19 @@
+<template name="DataGrater_Collections_show_page">
+
+{{#if collection}}
+  <h1>Collection {{collection.name}}:</h1>
+
+  {{#if collection.fields}}
+  <ul>
+    {{#each field in collection.fields}}
+    <li>{{field}}</li>
+    {{/each}}
+  </ul>
+  {{else}}
+    <p>Collection has no fields</p>
+  {{/if}}
+{{else}}
+  <p>Collection does not exist</p>
+{{/if}}
+
+</template>

@@ -1,0 +1,16 @@
+<template name="DataGrater_Collections_show_list">
+
+  <h1>Collections:</h1>
+
+  {{#if names}}
+  <ul>
+    {{#each name in names}}
+    <li><a href="/datagrater/collections/{{name}}"
+      title="{{name}}">{{name}}</a></li>
+    {{/each}}
+  </ul>
+  {{else}}
+    <p>No Collections found</p>
+  {{/if}}
+
+</template>
