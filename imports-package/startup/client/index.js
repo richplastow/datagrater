@@ -1,8 +1,11 @@
 //// Client startup through a single entry point. 
 
-////@todo
-export const DataGrater = (config) => {
-  console.log('@todo DataGrater Client config:',config);
+//// Global configuration object. 
+config = {};
+
+//// Provide the DataGrater single point of entry. 
+export const DataGrater = (c) => {
+  config = c;
 }
 
 //// Set up all routes. 

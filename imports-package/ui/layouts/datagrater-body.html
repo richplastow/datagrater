@@ -1,6 +1,10 @@
 <template name="DataGrater_body">
 
-  <h4><a href="/datagrater" title="DataGrater">DataGrater</a></h4>
+  <section id="menu">
+    <a href="/">Home</a>
+    <a href="{{pathFor 'DataGrater.home'}}">DataGrater</a>
+    <a href="{{pathFor 'DataGrater.Collections.show.list'}}">Collections</a>
+  </section>
 
   <div id="content-container">
     {{> Template.dynamic template=main}}

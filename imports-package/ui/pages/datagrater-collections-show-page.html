@@ -6,7 +6,11 @@
   {{#if collection.fields}}
   <ul>
     {{#each field in collection.fields}}
-    <li>{{field}}</li>
+    <li>{{field.key}}:
+      {{#each type in field.types}}
+      <span>{{type}}</span>
+      {{/each}}
+    </li>
     {{/each}}
   </ul>
   {{else}}

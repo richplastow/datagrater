@@ -1,6 +1,6 @@
 Package.describe({
   name: 'oopish:datagrater',
-  version: '0.0.2',
+  version: '0.0.3',
   // Brief, one-line summary of the package.
   summary: 'Fine-grained admin UI for managing a Meteor app’s database',
   // URL to the Git repository containing the source code for this package.
@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.3.1');
-  api.use('ecmascript');
+  api.use('ecmascript'); // the ecmascript package includes the modules package
 
   // api.addAssets([
   // ], 'client');
@@ -20,7 +20,7 @@ Package.onUse(function(api) {
   //// Cannot use `import { Template } from 'meteor/templating' in package.js. 
   api.use(['templating'], 'client');
 
-  //// Cannot leave off 'index.js' in package.js. 
+  //// Cannot leave off '/index.js' in package.js. 
   api.mainModule('imports-package/startup/client/index.js', 'client');
   api.mainModule('imports-package/startup/server/index.js', 'server');
 });
