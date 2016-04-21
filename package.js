@@ -1,6 +1,6 @@
 Package.describe({
   name: 'oopish:datagrater',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
   summary: 'Fine-grained admin UI for managing a Meteor app’s database',
   // URL to the Git repository containing the source code for this package.
