@@ -2,11 +2,11 @@
 
   <h1>Collections:</h1>
 
-  {{#if names}}
+  {{#if collections}}
   <ul>
-    {{#each name in names}}
-    <li><a href="/datagrater/collections/{{name}}"
-      title="{{name}}">{{name}}</a></li>
+    {{#each collection in collections}}
+    <li><a href="/datagrater/collections/{{collection.name}}"
+      title="{{collection.name}}">{{collection.name}}</a></li>
     {{/each}}
   </ul>
   {{else}}
