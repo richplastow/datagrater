@@ -3,16 +3,40 @@
 {{#if collection}}
   <h1>Collection {{collection.name}}:</h1>
 
+  <h1>{{count}} documents</h1>
+
   {{#if collection.fields}}
-  <ul>
-    {{#each field in collection.fields}}
-    <li>{{field.key}}:
-      {{#each type in field.types}}
-      <span>{{type}}</span>
+  <table>
+
+   <thead>
+    <tr>
+      {{#each field in collection.fields}}
+      <th title="{{#each type in field.types}}{{type}} {{/each}}">
+        {{field.key}}</th>
       {{/each}}
-    </li>
+    </tr>
+   </thead>
+   <tfoot>
+    <tr>
+      {{#each field in collection.fields}}
+      <td title="{{#each type in field.types}}{{type}} {{/each}}">
+        {{field.key}}</td>
+      {{/each}}
+    </tr>
+   </tfoot>
+
+   <tbody>
+    {{#each document in collection.documents}}
+    <tr>
+      {{#each field in document.fields}}
+      <td>{{field.value}}</td>
+      {{/each}}
+    </tr>
     {{/each}}
-  </ul>
+   </tbody>
+
+  </table>
+
   {{else}}
     <p>Collection has no fields</p>
   {{/if}}

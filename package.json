@@ -1,6 +1,6 @@
 {
   "name": "datagrater",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Fine-grained admin UI for managing a Meteor app’s database",
   "main": "datagrater.js",
   "scripts": {

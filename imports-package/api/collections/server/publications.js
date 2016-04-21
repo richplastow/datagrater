@@ -22,7 +22,9 @@ Meteor.startup( () => {
 
       //// A Fiber is needed to avoid a ‘Can't wait without Fiber’ error. 
       Fiber( () => {
-        const fields = []; // contains `{key:'foo',types:['object','boolean']}`
+        const fields = [] // contains `{ key:'foo',types:['object','boolean'] }`
+            , items  = []
+        ;
         driver.open(result.name).find({}).forEach( (item) => { //@todo limit the sample
           Object.keys(item).forEach( (key) => {
             const type = typeof item[key];
@@ -34,12 +36,25 @@ Meteor.startup( () => {
               fields[key].types.push(type);
             }
           });
+          items.push(item);
+        });
+
+        const documents = [];
+        items.forEach( (item) => {
+          const doc = { fields:[] };
+          fields.forEach( (field) => {
+            doc.fields.push({
+              value: item[ field.key ]
+            });
+          });
+          documents.push(doc);
         });
 
         const tmp = collections.get();
         tmp.push({
-          name:   result.name,
-          fields: fields,
+          name:      result.name,
+          fields:    fields,
+          documents: documents,
         });
         collections.set(tmp);
 

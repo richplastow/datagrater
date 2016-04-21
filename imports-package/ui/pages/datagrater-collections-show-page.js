@@ -12,4 +12,9 @@ Template.DataGrater_Collections_show_page.helpers({
     return Collections.findOne({ name:name });
   },
 
+  count() {
+    const name = FlowRouter.getParam('name');
+    return Collections.findOne({ name:name }).documents.length;
+  },
+
 });
